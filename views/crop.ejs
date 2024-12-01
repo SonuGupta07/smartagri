@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+<h2 class="blurred-overlay" style="margin: auto; margin-top: 10px;">Sow the Seeds of Success: Choosing the Right Crop for Your Farm</h2>
+<div class="form-container" style="max-width: 90%;">
+  
+
+  <form id="cropForm" action="/predict" method="post">
+    <div class="form-group">
+      <label for="Nitrogen">Nitrogen</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Nitrogen"
+        name="N"
+        value="<%= userValues[0] || null  %>"
+        placeholder="Enter the value (example: 50)"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous">Phosphorous</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Phosphorous"
+        name="P"
+        value="<%= userValues[1] || null  %>"
+        placeholder= "Enter the value (example: 50)"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Pottasium">Pottasium</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Pottasium"
+        name="K"
+        value="<%= userValues[2] || null  %>"
+        placeholder="Enter the value (example: 50)"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="ph">pH Level</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ph"
+        name="pH"
+        value="<%= userValues[3] || null  %>"
+        placeholder= "Enter the value" 
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Rainfall">Rainfall (in mm)</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Rainfall"
+        name="rainfall"
+        value="<%= userValues[4] || null  %>"
+        placeholder= "Enter the value"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="temp">Average Temprature (&#8451)</label>
+      <input
+        type="text"
+        class="form-control"
+        id="temp"
+        name="temperature"
+        value="<%= userValues[5] || null  %>"
+        placeholder=  "Enter the value" 
+        required
+      />
+    </div>
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+      >
+        Predict
+      </button>
+      
+    </div>
+
+    <div id="predictionMessage" style="margin-top: 20px; " class="d-flex justify-content-center">
+      <p id="result">The best possible crop is: 
+          <span ><strong id="predictedCrop" style="font-size: large;"> <%= prediction %>
+       </strong></span>
+      </p>
+
+      <% if (userValues.length > 0) { %>
+        <div class="userValues" style="font-weight: normal;">
+            <div class="d-flex justify-content-center">
+              <a
+                 href="/processCultivation/<%= prediction %>"
+                class="btn btn-info"
+                style="color: rgb(8, 8, 53); font-weight: bold; text-decoration: underline;"
+              >
+                How to cultivate??
+              </a>
+        </div>
+    <% } %>
+    
+    </div>
+  </form>
+</div>
+
+
+
+<%- include('partials/footer') %>
