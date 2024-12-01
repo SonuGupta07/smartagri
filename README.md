@@ -5,15 +5,6 @@ SmartzAgri is an innovative agricultural solution designed to revolutionize trad
 <img src="https://github.com/sanjeetbth7/SmartzAgri/blob/master/public/images/logo.png" alt="CropReco Logo" width="150" height="150">
 
 
-## Team Members ( Infinite Void )
-- **Vishal Kumar Patel** 
-- **Sanjeet Kumar**     
-- **Ved Anand** 
-- **Twisha Talukder**
-
-
-![Team_member](https://github.com/sanjeetbth7/SmartzAgri/blob/master/public/images/demo/about.png)
-
 ### Here we have used : 
 - Frontend : HTML, CSS, javaScript, ejs  along with figma design
 - Backend :  node.js , express.js, 
